@@ -1,0 +1,178 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --shadow-glow: var(--shadow-glow);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.18 0.04 255);
+  --foreground: oklch(0.98 0.005 250);
+  --card: oklch(0.22 0.045 255);
+  --card-foreground: oklch(0.98 0.005 250);
+  --popover: oklch(0.22 0.045 255);
+  --popover-foreground: oklch(0.98 0.005 250);
+  --primary: oklch(0.6 0.21 258);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.26 0.045 255);
+  --secondary-foreground: oklch(0.98 0.005 250);
+  --muted: oklch(0.25 0.04 255);
+  --muted-foreground: oklch(0.75 0.03 250);
+  --accent: oklch(0.82 0.12 210);
+  --accent-foreground: oklch(0.18 0.04 255);
+  --destructive: oklch(0.68 0.19 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 14%);
+  --ring: oklch(0.6 0.21 258);
+  --chart-1: oklch(0.6 0.21 258);
+  --chart-2: oklch(0.82 0.12 210);
+  --chart-3: oklch(0.7 0.1 240);
+  --chart-4: oklch(0.5 0.15 260);
+  --chart-5: oklch(0.9 0.05 220);
+  --sidebar: oklch(0.22 0.045 255);
+  --sidebar-foreground: oklch(0.98 0.005 250);
+  --sidebar-primary: oklch(0.6 0.21 258);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.26 0.045 255);
+  --sidebar-accent-foreground: oklch(0.98 0.005 250);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.6 0.21 258);
+  --whatsapp: oklch(0.72 0.19 150);
+  --whatsapp-foreground: oklch(0.18 0.04 255);
+  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 55%, transparent);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+}
+
+@utility container-site { width: 100%; max-width: 76rem; margin-inline: auto; padding-inline: 1.25rem; }
+@utility eyebrow { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em; color: var(--accent); }
+@utility section-title { font-family: var(--font-display); font-weight: 700; font-size: clamp(1.6rem, 3vw, 2.4rem); }
+@utility btn-primary {
+  display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px;
+  padding: 0.7rem 1.4rem; font-weight: 600; font-size: 0.9rem;
+  background: var(--primary); color: var(--primary-foreground);
+  transition: transform .2s ease, box-shadow .2s ease, background-color .2s ease;
+  &:hover { transform: translateY(-1px); box-shadow: var(--shadow-glow); background: color-mix(in oklab, var(--primary) 88%, white); }
+}
+@utility btn-outline {
+  display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px;
+  padding: 0.7rem 1.4rem; font-weight: 600; font-size: 0.9rem;
+  border: 1px solid color-mix(in oklab, var(--accent) 50%, transparent); color: var(--foreground);
+  transition: background-color .2s ease, border-color .2s ease;
+  &:hover { background: color-mix(in oklab, var(--accent) 12%, transparent); border-color: var(--accent); }
+}
+@utility nav-link {
+  font-size: 0.9rem; color: var(--muted-foreground); transition: color .2s ease;
+  &:hover, &[data-status="active"] { color: var(--foreground); }
+  &[data-status="active"] { color: var(--primary); }
+}
+@utility link-muted { color: var(--muted-foreground); transition: color .2s; &:hover { color: var(--foreground); } }
+@utility chip {
+  display: inline-flex; border-radius: 9999px; padding: 0.3rem 0.8rem; font-size: 0.75rem; font-weight: 600;
+  border: 1px solid color-mix(in oklab, var(--accent) 40%, transparent); color: var(--accent);
+  transition: background-color .2s; &:hover { background: color-mix(in oklab, var(--accent) 10%, transparent); }
+}
+@utility card-lift {
+  border-radius: 1rem; border: 1px solid var(--border); background: var(--card); padding: 1.75rem;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  &:hover { transform: translateY(-4px); border-color: color-mix(in oklab, var(--primary) 50%, transparent); box-shadow: var(--shadow-glow); }
+}
+@utility hero-glow { background: radial-gradient(60rem 30rem at 80% 10%, color-mix(in oklab, var(--primary) 18%, transparent), transparent 70%); }
+@utility cta-panel {
+  border-radius: 1.5rem; padding: 3rem 1.5rem; text-align: center; border: 1px solid var(--border);
+  background: linear-gradient(135deg, color-mix(in oklab, var(--primary) 22%, var(--card)), var(--card));
+}
+@utility field {
+  width: 100%; margin-top: 0.4rem; border-radius: 0.6rem; border: 1px solid var(--input); background: var(--background);
+  padding: 0.65rem 0.85rem; color: var(--foreground); outline: none; transition: border-color .2s;
+  &:focus { border-color: var(--primary); }
+  &[aria-invalid="true"] { border-color: var(--destructive); }
+}
+@utility field-label { font-size: 0.875rem; font-weight: 600; }
+@utility field-error { margin-top: 0.35rem; font-size: 0.8rem; color: var(--destructive); }
+@utility reveal {
+  opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease;
+  &.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { opacity: 1; transform: none; transition: none; }
+}
+
+@keyframes assistant-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@utility animate-assistant-in { animation: assistant-in .2s ease-out; @media (prefers-reduced-motion: reduce) { animation: none; } }
+@utility safe-fab { right: calc(1rem + env(safe-area-inset-right)); bottom: calc(1rem + env(safe-area-inset-bottom)); }
