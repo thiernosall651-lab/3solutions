@@ -31,25 +31,25 @@ const projects = [
     name: "K2B Booking",
     url: "https://k2bbooking.com/",
     domain: "k2bbooking.com",
-    logoUrl: "https://s3s-solutions.lovable.app/__l5e/assets-v1/d23e5b38-c0bd-476c-bbf4-9974148455e8/logo-k2b-booking.png",
+    logoUrl: "https://three-s-showcase.lovable.app/__l5e/assets-v1/d23e5b38-c0bd-476c-bbf4-9974148455e8/logo-k2b-booking.png",
   },
   {
     name: "Teranga Beauty",
     url: "https://terangabeauty.net/",
     domain: "terangabeauty.net",
-    logoUrl: "https://s3s-solutions.lovable.app/__l5e/assets-v1/c944e8c8-f768-4514-a82a-89ca4d8d3922/logo-teranga-beauty.png",
+    logoUrl: "https://three-s-showcase.lovable.app/__l5e/assets-v1/c944e8c8-f768-4514-a82a-89ca4d8d3922/logo-teranga-beauty.png",
   },
   {
     name: "Les Nouveaux Jardins d’Amizmiz",
     url: "https://lesnouveauxjardinsdamizmiz.com/",
     domain: "lesnouveauxjardinsdamizmiz.com",
-    logoUrl: "https://s3s-solutions.lovable.app/__l5e/assets-v1/9a886525-468e-4194-abd7-7e445e2667b7/logo-jardins-amizmiz.jpg",
+    logoUrl: "https://three-s-showcase.lovable.app/__l5e/assets-v1/9a886525-468e-4194-abd7-7e445e2667b7/logo-jardins-amizmiz.jpg",
   },
   {
     name: "Sen Drapeaux",
     url: "https://sen-drapeau.3ssolutions.workers.dev/",
     domain: "sen-drapeau.3ssolutions.workers.dev",
-    logoUrl: "https://s3s-solutions.lovable.app/__l5e/assets-v1/2c443526-3d3d-4325-9abe-fd5c7ef5deeb/logo-sen-drapeaux.svg",
+    logoUrl: "https://three-s-showcase.lovable.app/__l5e/assets-v1/2c443526-3d3d-4325-9abe-fd5c7ef5deeb/logo-sen-drapeaux.svg",
   },
 ] as const;
 
