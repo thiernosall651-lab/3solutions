@@ -136,9 +136,10 @@ export function ContactList() {
 
 export function Socials() {
   return (
-    <div className="flex gap-3 text-sm">
+    <div className="flex flex-wrap gap-3 text-sm">
       <a href={CONTACTS.tiktok} target="_blank" rel="noopener noreferrer" className="chip">TikTok</a>
       <a href={CONTACTS.instagram} target="_blank" rel="noopener noreferrer" className="chip">Instagram</a>
+      <a href="https://www.facebook.com/3solustions" target="_blank" rel="noopener noreferrer" className="chip">Facebook</a>
     </div>
   );
 }

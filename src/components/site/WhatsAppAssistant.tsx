@@ -31,6 +31,15 @@ export function WhatsAppAssistant() {
   };
 
   useEffect(() => {
+    const openFromHomepage = () => {
+      setError(false);
+      setOpen(true);
+    };
+    window.addEventListener("3s-open-whatsapp-assistant", openFromHomepage);
+    return () => window.removeEventListener("3s-open-whatsapp-assistant", openFromHomepage);
+  }, []);
+
+  useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
     window.addEventListener("keydown", onKey);
